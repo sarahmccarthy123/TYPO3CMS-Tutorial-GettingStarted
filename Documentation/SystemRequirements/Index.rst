@@ -10,7 +10,7 @@ System Requirements
 
 TYPO3 requires a web server running PHP and access to a database.
 
-Composer is also required for local development.
+Composer is required for local development.
 
 For up-to-date information about TYPO3's system requirements visit `get.typo3.org
 <https://get.typo3.org/version/11#system-requirements>`_.
