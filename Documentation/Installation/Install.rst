@@ -16,7 +16,7 @@ For more information on how to deploy TYPO3 to a live environment, visit the :re
 Pre-installation Checklist
 --------------------------
 
-- Command line (CLI) access with the ability to create directories and symbolic links.
+- Command line (CLI) access with rights to create directories and symbolic links.
 - Access to `Composer <https://getcomposer.org>`__ via the CLI (for local development)
 - Access to the web server's root directory
 - Database with appropriate credentials
@@ -66,7 +66,7 @@ This command pulls down the latest release of TYPO3 and places it in the
 :file:`example-project-directory`.
 
 After this command has finished running, :file:`example-project-directory`
-will contain the following structure:
+will have the following structure:
 
 .. code-block:: none
 
@@ -122,19 +122,19 @@ Create an empty file called `FIRST_INSTALL` in the `/public` directory:
 Access TYPO3 via a web browser
 ------------------------------
 
-After you have configured your web server to point ot the `public` directory of your project,
-TYPO3 can be accessed via a web browser. When accessing a new site for the first time, TYPO3 automatically
+After you have configured your web server to point at the `public` directory in your project
+TYPO3 can be accessed via a web browser. The first time a new site is accessed TYPO3 automatically
 redirects all requests to :samp:`/typo3/install.php` to complete the installation process.
 
 .. tip::
 
-   When accessing the page via HTTPS, a "Privacy error" or similar warning is likely to occur.
+   When accessing the page via HTTPS you might get a "Privacy error" or similar warning.
    In a local environment it is safe to ignore this warning by forcing the browser to ignore similar
    exceptions for this domain.
 
-   The warning is due to the fact that self-signed certificates are being used.
+   The warning occurs because self-signed certificates are being used.
 
-   If there is a `trustedHostsPattern` error on initial access, accessing TYPO3 without HTTPS (`http://`) is also an option.
+   If there is a `trustedHostsPattern` error on initial access, try accessing TYPO3 without HTTPS (`http://`).
 
 
 Scan Environment
@@ -145,13 +145,13 @@ TYPO3 will now scan the host environment. During the scan TYPO3 will check the h
 - Minimum required version of PHP is installed.
 - Required PHP extensions are loaded.
 - php.ini is configured.
-- TYPO3 is able to create and delete files and directories within the installation's root directory.
+- TYPO3 has the rights to create and delete files and directories in the installation root directory.
 
 If no issues are detected, the installation process can continue.
 
-In the event that certain criteria are not met, TYPO3 will display a list of issues it has detected accompanied by a resolution for each issue.
+If any requirements are not met, TYPO3 will display a list of issues it has detected with suggested solutions.
 
-Once changes have been made, TYPO3 can re-scan the host environment by reloading the page :samp:`https://example.org/typo3/install.php`.
+Once you have made any changes, get TYPO3 to rescan the host environment by reloading the page :samp:`https://example.org/typo3/install.php`.
 
 .. include:: ../Images/AutomaticScreenshots/QuickInstall/Step1SystemEnvironment.rst.txt
 
@@ -166,8 +166,8 @@ TYPO3 can either connect to an existing empty database or create a new one.
 
 The list of databases available is dependent on which database drivers are installed on the host.
 
-For example, if an instance of TYPO3 is intended to be used with a MySQL database then the PHP extension 'pdo_mysql' is required.
-Once it's installed, 'MySQL Database' will be an available option.(Review)
+For example, if you want to use a MySQL database with your TYPO3 instance install the 'pdo_mysql' PHP extension.
+Then 'MySQL Database' will be available in the list.(Review)
 
 .. include:: ../Images/AutomaticScreenshots/QuickInstall/Step3ChooseDb.rst.txt
 
@@ -176,7 +176,7 @@ Create Administrative User & Set Site Name
 
 An administrator account needs to be created to gain access to TYPO3's backend.
 
-An email address for this user can also be specified and a name can also be given.
+An email address for this user and a site name can be added.
 
 .. include:: ../Images/AutomaticScreenshots/QuickInstall/Step4AdminUserSitename.rst.txt
 
@@ -184,10 +184,10 @@ An email address for this user can also be specified and a name can also be give
 Initialise
 -----------
 
-TYPO3 offers two options for initialisation: Creating an empty starting page or
-it can go directly to the backend administrative interface.
-Beginners should select the first option and allow TYPO3 to create an empty starting page,
-this will also generate a site configuration file.
+TYPO3 offers two options for initialisation: creating an empty starting page or
+going directly into the backend administrative interface.
+Beginners should select the first option and allow TYPO3 to create an empty starting page.
+This will also generate a site configuration file.
 
 .. include:: ../Images/AutomaticScreenshots/QuickInstall/Step5LastStep.rst.txt
 
@@ -199,5 +199,5 @@ Now that the installation is complete, TYPO3 can be :ref:`configured <setup>`.
 Using DDEV
 ----------
 
-We also provide a step-by-step tutorial on how to :ref:`Install TYPO3 using DDEV <installation-ddev-tutorial>`. 
-This tutorial also includes a video.
+We also provide a step-by-step tutorial on how to :ref:`Install TYPO3 using DDEV <installation-ddev-tutorial>` 
+which includes a video.
